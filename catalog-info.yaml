@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: python-vnqnvgyo-gitops
+  description: This is GitOps manifest for python-vnqnvgyo   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=python-vnqnvgyo
+    backstage.io/kubernetes-id: python-vnqnvgyo 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: python-vnqnvgyo-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:python-vnqnvgyo
